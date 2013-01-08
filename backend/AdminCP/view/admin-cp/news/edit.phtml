@@ -1,0 +1,22 @@
+<h3>Add new news</h3>
+
+Fill below files and submit to add new news.
+<form name="news_frm_add" action="" method="post">
+    <input type="hidden" name="id" value="<?php echo $this->news['id']; ?>" />
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input name="news_name" value="<?php echo $this->news['name']; ?>" /></td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td>
+                <textarea name="news_content"><?php echo $this->news['content']; ?></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="SAVE" /></td>
+            <td><input type="reset" value="RESET" /></td>
+        </tr>
+    </table>
+</form>

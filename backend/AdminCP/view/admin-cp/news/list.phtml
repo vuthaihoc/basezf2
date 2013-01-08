@@ -1,0 +1,44 @@
+<h3>Module : List news</h3>
+<div>
+    <a href="<?php echo $this->url("admincp",array('controller'=>'news','action'=>'add'));?>">
+        Add a news
+    </a>
+</div>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Content</th>
+        <th>Action</th>
+    </tr>
+    <?php 
+    foreach($this->news as $news_item)
+    {
+        ?>
+    <tr>
+        <td>
+           <?php echo $news_item['id']; ?>
+        </td>
+        <td>
+           <?php echo $news_item['name']; ?>
+        </td>
+        <td>
+           <?php echo $news_item['content']; ?>
+        </td>
+        <td>
+            <a href="<?php
+            echo $this->url('admincp',
+               array('controller'=>'news','action'=>'edit', 'id' => $news_item['id']));
+            ?>">EDIT</a>
+            /
+            <a class="confirm_before_action" href="<?php
+            echo $this->url('admincp',
+               array('controller'=>'news','action'=>'delete', 'id' => $news_item['id']));
+            ?>">DEL</a>
+        </td>
+    </tr>
+        <?php
+    }
+    ?>
+    
+</table>

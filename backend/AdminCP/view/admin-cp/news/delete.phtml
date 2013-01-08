@@ -1,0 +1,6 @@
+<?php
+if($message = $this->message){
+    echo $message['error'].'<br/>';
+    echo '<a href="'.$this->url('admincp',array('controller'=>'news','action'=>'list')).'">Back to list!</a>';
+}
+?>
